@@ -1,0 +1,64 @@
+{
+  "name": "ffx-starter-template",
+  "description": "FFX typescript starter template for Flatfile configuration",
+  "version": "0.0.0",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "ffx",
+    "flatfile"
+  ],
+  "author": "Oberan (https://oberan.dev)",
+  "homepage": "https://github.com/oberandev/ffx-starter-template#readme",
+  "bugs": {
+    "url": "https://github.com/oberandev/ffx-starter-template/issues"
+  },
+  "private": true,
+  "engines": {
+    "node": ">= 18"
+  },
+  "module": "./src/main.ts",
+  "main": "./src/main.ts",
+  "scripts": {
+    "build": "tsc && esbuild src/main.ts --bundle --platform=node --target=node18 --minify --outdir=dist --out-extension:.js=.min.cjs",
+    "clean": "rimraf ./dist",
+    "compile": "tsc",
+    "format": "prettier --write '{src,test}/**/*.{js,mjs,mts,ts}'",
+    "lint": "eslint '{src,test}/**/*.{js,mjs,mts,ts}'",
+    "lint:fix": "eslint '{src,test}/**/*.{js,mjs,mts,ts}' --fix",
+    "prepare": "is-ci || husky install",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^2.1.2",
+    "@types/node": "^20.8.3",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "@vitest/coverage-v8": "^0.34.6",
+    "@vitest/ui": "^0.34.6",
+    "dotenv": "^16.3.1",
+    "esbuild": "^0.19.4",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "husky": "^8.0.3",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11",
+    "vite-tsconfig-paths": "^4.2.1",
+    "vitest": "^0.34.6"
+  },
+  "lint-staged": {
+    "**/*.{json,md}": [
+      "prettier --write"
+    ],
+    "**/*.{js,mjs,mts,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
