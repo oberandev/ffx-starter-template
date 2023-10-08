@@ -1,5 +1,9 @@
 import "dotenv/config";
+import { Client, FlatfileEvent } from "@flatfile/listener";
 
-export function foo() {
-  return "foo";
+export default function flatfileEventListener(listener: Client) {
+  listener.on("**", (event: FlatfileEvent) => {
+    // Log all events
+    console.log(`Received event: ${JSON.stringify(event, null, 2)}`);
+  });
 }
