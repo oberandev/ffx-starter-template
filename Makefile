@@ -50,6 +50,10 @@ compile: ## Run TypeScript compiler
 deps: ## Install all dependencies
 	pnpm install
 
+.PHONY: deploy
+deploy: ## Deploy code
+	echo "not yet implemented"
+
 .PHONY: format
 format: ## Format typescript files
 	pnpm prettier --write '{src,test}/**/*.{js,mjs,mts,ts}'
