@@ -1,5 +1,6 @@
 const { FlatCompat } = require("@eslint/eslintrc");
 const js = require("@eslint/js");
+const eslintTsParser = require("@typescript-eslint/parser");
 const eslintPluginImport = require("eslint-plugin-import");
 
 const compat = new FlatCompat({
@@ -9,6 +10,9 @@ const compat = new FlatCompat({
 
 module.exports = [
   {
+    languageOptions: {
+      parser: eslintTsParser,
+    },
     plugins: {
       import: eslintPluginImport,
     },
