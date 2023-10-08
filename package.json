@@ -19,16 +19,16 @@
   "module": "./src/main.ts",
   "main": "./src/main.ts",
   "scripts": {
-    "build": "tsc && esbuild src/main.ts --bundle --platform=node --target=node18 --minify --outdir=dist --out-extension:.js=.min.cjs",
-    "clean": "rimraf ./dist",
-    "compile": "tsc",
-    "format": "prettier --write '{src,test}/**/*.{js,mjs,mts,ts}'",
-    "lint": "eslint '{src,test}/**/*.{js,mjs,mts,ts}'",
-    "lint:fix": "eslint '{src,test}/**/*.{js,mjs,mts,ts}' --fix",
+    "build": "make build",
+    "clean": "make clean",
+    "compile": "make compile",
+    "format": "make format",
+    "lint": "make lint",
+    "lint:fix": "make lint-fix",
     "prepare": "is-ci || husky install",
-    "test": "vitest",
-    "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui"
+    "test": "make test",
+    "test:coverage": "make test-coverage",
+    "test:ui": "make test-ui"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^2.1.2",

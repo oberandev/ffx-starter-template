@@ -16,45 +16,49 @@ This project was bootstrapped with [FFX starter template](https://github.com/obe
 1. Ensure you have [Nix](https://nixos.org/download.html) and [direnv](https://direnv.net/#basic-installation) configured
 2. Run `cp envrc.example envrc` and configure any necessary env vars
 3. Run `direnv allow`
-4. Install dependecies with `pnpm install`
+4. Install dependecies with `make install`
 
 ## <a name="available-scripts"></a>Available Scripts
 
 In the project directory, you can run:
 
-### `pnpm build`
+### `make`
+
+List all avaliable scripts.
+
+### `make build`
 
 Runs `esbuild` to bundle your config for publishing to Flatfile.
 
-### `pnpm clean`
+### `make clean`
 
 Removes all build artifacts.
 
-### `pnpm compile`
+### `make compile`
 
 Runs `tsc` to compile your code.
 
-### `pnpm format`
+### `make format`
 
 Runs `prettier` to format your code.
 
-### `pnpm lint`
+### `make lint`
 
 Runs `eslint` to verify your code meets configured standards.
 
-### `pnpm lint:fix`
+### `make lint-fix`
 
 Runs `eslint` to attempt to fix errors found violating configured standards.
 
-### `pnpm test`
+### `make test`
 
 Runs `vitest` in watch mode.
 
-### `pnpm test:coverage`
+### `make test-coverage`
 
 Runs `vitest` once (not in watch mode) and generates code coverage reports.
 
-### `pnpm test:ui`
+### `make test-ui`
 
 Runs `vitest` web server and opens coverage reports in your default browser.
 
